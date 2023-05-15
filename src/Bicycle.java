@@ -7,4 +7,9 @@ public class Bicycle extends Vehicle {
     public void updateTyre() {
         System.out.println("Меняем покрышку велосипеда " + getModelName());
     }
+
+    @Override
+    public boolean hasEngine() {
+        return false;
+    }
 }

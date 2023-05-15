@@ -1,4 +1,5 @@
-public abstract class Vehicle {
+
+public abstract class Vehicle implements Maintenance {
     private String modelName;
     private int wheelsCount;
 
@@ -19,5 +20,20 @@ public abstract class Vehicle {
 
     public void checkEngine() {
         System.out.println("Проверяем двигатель");
+    }
+
+    @Override
+    public void doService() {
+        for (int i = 0; i < getWheelsCount(); i++) {
+            updateTyre();
+        }
+        if (hasEngine()) {
+            checkEngine();
+        }
+    }
+
+    @Override
+    public boolean hasEngine() {
+        return true;
     }
 }

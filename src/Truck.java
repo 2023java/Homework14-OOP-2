@@ -1,9 +1,6 @@
 public class Truck extends Vehicle {
-    private boolean hasTrailer;
-
-    public Truck(String modelName, int wheelsCount, boolean hasTrailer) {
+    public Truck(String modelName, int wheelsCount) {
         super(modelName, wheelsCount);
-        this.hasTrailer = hasTrailer;
     }
 
     @Override
@@ -15,7 +12,9 @@ public class Truck extends Vehicle {
         System.out.println("Проверяем прицеп");
     }
 
-    public boolean hasTrailer() {
-        return hasTrailer;
+    @Override
+    public void doService() {
+        super.doService();
+        checkTrailer();
     }
 }
