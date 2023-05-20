@@ -8,13 +8,17 @@ public class Truck extends Vehicle {
         System.out.println("Меняем покрышку грузовика " + getModelName());
     }
 
-    public void checkTrailer() {
-        System.out.println("Проверяем прицеп");
-    }
-
-    @Override
     public void doService() {
         super.doService();
+        checkEngine();
         checkTrailer();
+    }
+
+    private void checkEngine() {
+        System.out.println("Проверяем двигатель грузовика");
+    }
+
+    private void checkTrailer() {
+        System.out.println("Проверяем прицеп");
     }
 }

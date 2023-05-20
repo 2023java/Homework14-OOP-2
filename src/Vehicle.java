@@ -18,22 +18,10 @@ public abstract class Vehicle implements Maintenance {
 
     public abstract void updateTyre();
 
-    public void checkEngine() {
-        System.out.println("Проверяем двигатель");
-    }
-
     @Override
     public void doService() {
         for (int i = 0; i < getWheelsCount(); i++) {
             updateTyre();
         }
-        if (hasEngine()) {
-            checkEngine();
-        }
-    }
-
-    @Override
-    public boolean hasEngine() {
-        return true;
     }
 }
